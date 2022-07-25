@@ -15,6 +15,9 @@ function getRandomInt(min, max){
   return Math.floor(Math.random()*(max - min) + min) 
 }
 
+
+
+
 function generatePassword() {
  // prompt
 var textInput = window.prompt("Choose a password length between 8 and 128 characters.")
@@ -64,7 +67,11 @@ console.log(selectedChars)
 var generatePassword = ""
 
 for (var i = 0; i < passLength; i++){
-var randomItem = selectedChars[getRandomInt(0, selectedChars.length)]
+  // randomly selects array from selected characters
+var randomArray = selectedChars[getRandomInt(0, selectedChars.length)]
+// selects random characters from array above
+var randomItem = randomArray[getRandomInt(0, randomArray.length)]
+
 generatePassword += randomItem
 console.log(randomItem)
 }
